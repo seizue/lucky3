@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace lucky3
 {
-    public partial class Main : Form
+    public partial class Main : MetroFramework.Forms.MetroForm
     {
         public Main()
         {
             InitializeComponent();
         }
+
+     
     }
 }
