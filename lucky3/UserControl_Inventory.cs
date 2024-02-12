@@ -20,6 +20,8 @@ namespace lucky3
             InitializeComponent();
             LoadInventoryData();
 
+            // Renumber ControlNo for the remaining rows
+            RenumberControlNo(Grid_Inventory);
         }
 
         public void LoadInventoryData()
@@ -83,6 +85,9 @@ namespace lucky3
                 // Set the values of the controls in the UpdateForm
                 updateForm.SetControlValues(controlNo, straightNumbersList, rambolNumbersList, drawTime);
 
+                // Renumber ControlNo for the remaining rows
+                RenumberControlNo(Grid_Inventory);
+                
                 // Show the UpdateForm
                 updateForm.ShowDialog();
             }
@@ -92,9 +97,76 @@ namespace lucky3
             }
         }
 
-     
+        private List<DrawData> LoadInventoryDataFromJson()
+        {
+            try
+            {
+                string filePath = Path.Combine(Application.StartupPath, "inventory.json");
+
+                if (File.Exists(filePath))
+                {
+                    // Read the JSON file
+                    string json = File.ReadAllText(filePath);
+
+                    // Deserialize JSON to a list of DrawData objects
+                    return JsonConvert.DeserializeObject<List<DrawData>>(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading inventory data: " + ex.Message);
+            }
+
+            return new List<DrawData>();
+        }
+
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            if (Grid_Inventory.SelectedRows.Count > 0)
+            {
+                // Get the index of the selected row
+                int rowIndex = Grid_Inventory.SelectedRows[0].Index;
+
+                // Get the control number of the selected row
+                string controlNo = Grid_Inventory.Rows[rowIndex].Cells["CONTROL_NO"].Value.ToString();
+
+                // Remove the row from the DataGridView
+                Grid_Inventory.Rows.RemoveAt(rowIndex);
+
+                // Remove the corresponding data from the inventoryData list
+                List<DrawData> inventoryData = LoadInventoryDataFromJson();
+                DrawData dataToRemove = inventoryData.FirstOrDefault(item => item.ControlNo == controlNo);
+                if (dataToRemove != null)
+                {
+                    inventoryData.Remove(dataToRemove);
+
+                    // Update the inventory.json file
+                    string json = JsonConvert.SerializeObject(inventoryData, Formatting.Indented);
+                    File.WriteAllText("inventory.json", json);
+                }
+
+                // Renumber ControlNo for the remaining rows
+                RenumberControlNo(Grid_Inventory);
+
+                MessageBox.Show("Row deleted successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Please select a row before deleting.");
+            }
+        }
+
+        private void RenumberControlNo(DataGridView dataGridView)
+        {
+            // Renumber ControlNo for the remaining rows
+            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+            {
+                dataGridView.Rows[i].Cells["CONTROL_NO"].Value = "CTR_0" + (i + 1);
+            }
+        }
+
     }
-    
+
 }
 
 

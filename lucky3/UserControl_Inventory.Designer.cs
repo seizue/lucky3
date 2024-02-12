@@ -125,7 +125,6 @@
             this.Grid_Inventory.UseCustomBackColor = true;
             this.Grid_Inventory.UseCustomForeColor = true;
             this.Grid_Inventory.UseStyleColors = true;
- 
             // 
             // CONTROL_NO
             // 
@@ -182,6 +181,7 @@
             this.button_Delete.TabIndex = 223;
             this.button_Delete.Text = "DELETE";
             this.button_Delete.UseVisualStyleBackColor = false;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // Border
             // 
