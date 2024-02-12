@@ -35,14 +35,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Grid_Inventory = new MetroFramework.Controls.MetroGrid();
-            this.button_Update = new System.Windows.Forms.Button();
-            this.button_Delete = new System.Windows.Forms.Button();
-            this.Border = new System.Windows.Forms.Panel();
             this.CONTROL_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STRAIGHT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RAMBOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIME_DRAW = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_Update = new System.Windows.Forms.Button();
+            this.button_Delete = new System.Windows.Forms.Button();
+            this.Border = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Inventory)).BeginInit();
             this.SuspendLayout();
@@ -125,44 +125,7 @@
             this.Grid_Inventory.UseCustomBackColor = true;
             this.Grid_Inventory.UseCustomForeColor = true;
             this.Grid_Inventory.UseStyleColors = true;
-            // 
-            // button_Update
-            // 
-            this.button_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(222)))));
-            this.button_Update.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button_Update.FlatAppearance.BorderSize = 0;
-            this.button_Update.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Update.Location = new System.Drawing.Point(437, 2);
-            this.button_Update.Name = "button_Update";
-            this.button_Update.Size = new System.Drawing.Size(68, 26);
-            this.button_Update.TabIndex = 224;
-            this.button_Update.Text = "UPDATE";
-            this.button_Update.UseVisualStyleBackColor = false;
-            // 
-            // button_Delete
-            // 
-            this.button_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(227)))));
-            this.button_Delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Delete.FlatAppearance.BorderSize = 0;
-            this.button_Delete.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Delete.Location = new System.Drawing.Point(527, 2);
-            this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(68, 26);
-            this.button_Delete.TabIndex = 223;
-            this.button_Delete.Text = "DELETE";
-            this.button_Delete.UseVisualStyleBackColor = false;
-            // 
-            // Border
-            // 
-            this.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.Border.Location = new System.Drawing.Point(515, 6);
-            this.Border.Name = "Border";
-            this.Border.Size = new System.Drawing.Size(2, 18);
-            this.Border.TabIndex = 221;
+ 
             // 
             // CONTROL_NO
             // 
@@ -188,6 +151,45 @@
             // 
             this.DATE.HeaderText = "DATE";
             this.DATE.Name = "DATE";
+            // 
+            // button_Update
+            // 
+            this.button_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(222)))));
+            this.button_Update.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button_Update.FlatAppearance.BorderSize = 0;
+            this.button_Update.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Update.Location = new System.Drawing.Point(437, 2);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Size = new System.Drawing.Size(68, 26);
+            this.button_Update.TabIndex = 224;
+            this.button_Update.Text = "UPDATE";
+            this.button_Update.UseVisualStyleBackColor = false;
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
+            // 
+            // button_Delete
+            // 
+            this.button_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(227)))));
+            this.button_Delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Delete.FlatAppearance.BorderSize = 0;
+            this.button_Delete.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Delete.Location = new System.Drawing.Point(527, 2);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.Size = new System.Drawing.Size(68, 26);
+            this.button_Delete.TabIndex = 223;
+            this.button_Delete.Text = "DELETE";
+            this.button_Delete.UseVisualStyleBackColor = false;
+            // 
+            // Border
+            // 
+            this.Border.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Border.Location = new System.Drawing.Point(515, 6);
+            this.Border.Name = "Border";
+            this.Border.Size = new System.Drawing.Size(2, 18);
+            this.Border.TabIndex = 221;
             // 
             // UserControl_Inventory
             // 

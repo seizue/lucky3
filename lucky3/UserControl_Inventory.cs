@@ -19,6 +19,7 @@ namespace lucky3
         {
             InitializeComponent();
             LoadInventoryData();
+
         }
 
         public void LoadInventoryData()
@@ -53,19 +54,47 @@ namespace lucky3
                 }
                 else
                 {
-                    // Handle the case where the file doesn't exist
-                    MessageBox.Show("Inventory file not found.");
+
                 }
             }
             catch (Exception ex)
             {
-                // Handle any exceptions that might occur during the loading process
-                MessageBox.Show("Error loading inventory data: " + ex.Message);
+
             }
         }
 
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            if (Grid_Inventory.SelectedCells.Count > 0)
+            {
+                DataGridViewRow selectedRow = Grid_Inventory.Rows[Grid_Inventory.SelectedCells[0].RowIndex];
+                string controlNo = selectedRow.Cells["CONTROL_NO"].Value.ToString();
+                string drawTime = selectedRow.Cells["TIME_DRAW"].Value.ToString();
+                string straightNumbers = selectedRow.Cells["STRAIGHT"].Value.ToString();
+                string rambolNumbers = selectedRow.Cells["RAMBOL"].Value.ToString();
 
+                // Split comma-separated strings into lists of strings
+                List<string> straightNumbersList = straightNumbers.Split(',').ToList();
+                List<string> rambolNumbersList = rambolNumbers.Split(',').ToList();
 
+                // Instantiate the UpdateForm
+                UpdateForm updateForm = new UpdateForm();
+
+                // Set the values of the controls in the UpdateForm
+                updateForm.SetControlValues(controlNo, straightNumbersList, rambolNumbersList, drawTime);
+
+                // Show the UpdateForm
+                updateForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a cell before updating.");
+            }
+        }
+
+     
     }
+    
 }
+
 
