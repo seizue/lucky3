@@ -73,6 +73,7 @@ namespace lucky3
                 dataToUpdate.StraightNumbers = straightNumbers;
                 dataToUpdate.RambolNumbers = rambolNumbers;
 
+
                 // Update the inventory.json file
                 string json = JsonConvert.SerializeObject(inventoryData, Formatting.Indented);
                 File.WriteAllText("inventory.json", json);
