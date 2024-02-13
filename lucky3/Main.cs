@@ -14,8 +14,8 @@ namespace lucky3
 {
     public partial class Main : MetroFramework.Forms.MetroForm
     {
-        private Color defaultColor = Color.FromArgb(0, 0, 42); // Default color 
-        private Color clickedColor = Color.FromArgb(193, 84, 55); // Color when the button is clicked
+        private Color defaultColor = Color.FromArgb(246, 247, 248); // Default color 
+        private Color clickedColor = Color.FromArgb(255, 192, 128); // Color when the button is clicked
 
         public class DrawData
         {
@@ -40,6 +40,7 @@ namespace lucky3
         {
             InitializeComponent();
             UpdateDateTimeLabel();
+            
 
             // Add choices to the combo box
             metroComboBox_ChooseTime.Items.Add("2:00 PM");
