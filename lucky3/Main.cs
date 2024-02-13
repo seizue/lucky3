@@ -14,8 +14,8 @@ namespace lucky3
 {
     public partial class Main : MetroFramework.Forms.MetroForm
     {
-        private Color defaultColor = Color.FromArgb(246, 247, 248); // Default color 
-        private Color clickedColor = Color.FromArgb(255, 192, 128); // Color when the button is clicked
+        private Color defaultColor = Color.Black; // Default color 
+        private Color clickedColor = Color.Maroon; // Color when the button is clicked
 
         public class DrawData
         {
