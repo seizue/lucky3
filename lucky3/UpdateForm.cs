@@ -15,6 +15,14 @@ namespace lucky3
         public UpdateForm()
         {
             InitializeComponent();
+
+            // Add choices to the combo box
+            metroComboBox_ChooseTime.Items.Add("2:00 PM");
+            metroComboBox_ChooseTime.Items.Add("5:00 PM");
+            metroComboBox_ChooseTime.Items.Add("9:00 PM");
+
+            // Optionally, you can set a default selection
+            metroComboBox_ChooseTime.SelectedIndex = 0;
         }
 
         public void SetControlValues(string selectedCellValue, List<string> straightNumbers, List<string> rambolNumbers, string drawTime)

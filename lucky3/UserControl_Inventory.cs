@@ -82,14 +82,14 @@ namespace lucky3
                 // Instantiate the UpdateForm
                 UpdateForm updateForm = new UpdateForm();
 
-                // Set the values of the controls in the UpdateForm
+                // Populate the UpdateForm with data
                 updateForm.SetControlValues(controlNo, straightNumbersList, rambolNumbersList, drawTime);
 
-                // Renumber ControlNo for the remaining rows
-                RenumberControlNo(Grid_Inventory);
-                
                 // Show the UpdateForm
                 updateForm.ShowDialog();
+
+                // Reload inventory data after closing the UpdateForm
+                LoadInventoryData();
             }
             else
             {

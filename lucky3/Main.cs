@@ -139,8 +139,6 @@ namespace lucky3
             userControl_Inventory1.Visible = false;
 
         }
-
-
     }
     
 }

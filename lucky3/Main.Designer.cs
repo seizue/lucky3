@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel_GridBg = new System.Windows.Forms.Panel();
+            this.button_MonthDate = new System.Windows.Forms.Button();
             this.label_datetime = new System.Windows.Forms.Label();
+            this.userControl_Inventory1 = new lucky3.UserControl_Inventory();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel11 = new MetroFramework.Controls.MetroPanel();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -59,6 +61,7 @@
             this.textBox_Straight3 = new System.Windows.Forms.TextBox();
             this.textBox_Straight2 = new System.Windows.Forms.TextBox();
             this.textBox_Straight1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button_History = new System.Windows.Forms.Button();
             this.button_Plasada = new System.Windows.Forms.Button();
@@ -68,9 +71,6 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.userControl_Inventory1 = new lucky3.UserControl_Inventory();
-            this.button_MonthDate = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel_GridBg.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +118,24 @@
             this.panel_GridBg.Size = new System.Drawing.Size(618, 364);
             this.panel_GridBg.TabIndex = 220;
             // 
+            // button_MonthDate
+            // 
+            this.button_MonthDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_MonthDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.button_MonthDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_MonthDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.button_MonthDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_MonthDate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_MonthDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button_MonthDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_MonthDate.Location = new System.Drawing.Point(407, 191);
+            this.button_MonthDate.Name = "button_MonthDate";
+            this.button_MonthDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button_MonthDate.Size = new System.Drawing.Size(185, 40);
+            this.button_MonthDate.TabIndex = 256;
+            this.button_MonthDate.Text = "MONTH / DATE";
+            this.button_MonthDate.UseVisualStyleBackColor = false;
+            // 
             // label_datetime
             // 
             this.label_datetime.AutoSize = true;
@@ -128,6 +146,14 @@
             this.label_datetime.Size = new System.Drawing.Size(79, 13);
             this.label_datetime.TabIndex = 254;
             this.label_datetime.Text = "MONTH / DATE";
+            // 
+            // userControl_Inventory1
+            // 
+            this.userControl_Inventory1.Location = new System.Drawing.Point(3, 3);
+            this.userControl_Inventory1.Name = "userControl_Inventory1";
+            this.userControl_Inventory1.Size = new System.Drawing.Size(612, 358);
+            this.userControl_Inventory1.TabIndex = 233;
+            this.userControl_Inventory1.Visible = false;
             // 
             // metroPanel4
             // 
@@ -433,6 +459,23 @@
             this.textBox_Straight1.TabIndex = 221;
             this.textBox_Straight1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(407, 179);
+            this.button2.Name = "button2";
+            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.button2.Size = new System.Drawing.Size(185, 27);
+            this.button2.TabIndex = 257;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -574,49 +617,6 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
-            // 
-            // userControl_Inventory1
-            // 
-            this.userControl_Inventory1.Location = new System.Drawing.Point(3, 3);
-            this.userControl_Inventory1.Name = "userControl_Inventory1";
-            this.userControl_Inventory1.Size = new System.Drawing.Size(612, 358);
-            this.userControl_Inventory1.TabIndex = 233;
-            this.userControl_Inventory1.Visible = false;
-            // 
-            // button_MonthDate
-            // 
-            this.button_MonthDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_MonthDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.button_MonthDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_MonthDate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.button_MonthDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_MonthDate.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_MonthDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button_MonthDate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_MonthDate.Location = new System.Drawing.Point(407, 191);
-            this.button_MonthDate.Name = "button_MonthDate";
-            this.button_MonthDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_MonthDate.Size = new System.Drawing.Size(185, 40);
-            this.button_MonthDate.TabIndex = 256;
-            this.button_MonthDate.Text = "MONTH / DATE";
-            this.button_MonthDate.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(182)))), ((int)(((byte)(182)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(407, 179);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(185, 27);
-            this.button2.TabIndex = 257;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
