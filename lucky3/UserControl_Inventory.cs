@@ -20,8 +20,10 @@ namespace lucky3
             InitializeComponent();
             LoadInventoryData();
 
-            // Renumber ControlNo for the remaining rows
-            RenumberControlNo(Grid_Inventory);
+            if (Grid_Inventory != null)
+            {
+                RenumberControlNo(Grid_Inventory);
+            }
         }
 
         public void LoadInventoryData()
@@ -56,47 +58,17 @@ namespace lucky3
                 }
                 else
                 {
-
+                    // Optionally, handle the case where the inventory.json file does not exist
+                    MessageBox.Show("The inventory.json file does not exist.");
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error loading inventory data: " + ex.Message);
             }
         }
 
-        private void button_Update_Click(object sender, EventArgs e)
-        {
-            if (Grid_Inventory.SelectedCells.Count > 0)
-            {
-                DataGridViewRow selectedRow = Grid_Inventory.Rows[Grid_Inventory.SelectedCells[0].RowIndex];
-                string controlNo = selectedRow.Cells["CONTROL_NO"].Value.ToString();
-                string drawTime = selectedRow.Cells["TIME_DRAW"].Value.ToString();
-                string straightNumbers = selectedRow.Cells["STRAIGHT"].Value.ToString();
-                string rambolNumbers = selectedRow.Cells["RAMBOL"].Value.ToString();
-
-                // Split comma-separated strings into lists of strings
-                List<string> straightNumbersList = straightNumbers.Split(',').ToList();
-                List<string> rambolNumbersList = rambolNumbers.Split(',').ToList();
-
-                // Instantiate the UpdateForm
-                UpdateForm updateForm = new UpdateForm();
-
-                // Populate the UpdateForm with data
-                updateForm.SetControlValues(controlNo, straightNumbersList, rambolNumbersList, drawTime);
-
-                // Show the UpdateForm
-                updateForm.ShowDialog();
-
-                // Reload inventory data after closing the UpdateForm
-                LoadInventoryData();
-            }
-            else
-            {
-                MessageBox.Show("Please select a cell before updating.");
-            }
-        }
-
+        
         private List<DrawData> LoadInventoryDataFromJson()
         {
             try
@@ -156,6 +128,7 @@ namespace lucky3
             }
         }
 
+      
         private void RenumberControlNo(DataGridView dataGridView)
         {
             // Renumber ControlNo for the remaining rows
@@ -165,6 +138,28 @@ namespace lucky3
             }
         }
 
+        private void button_PassDataInUpdateForm_Click(object sender, EventArgs e)
+        {
+            if (Grid_Inventory.SelectedCells.Count > 0)
+            {
+                DataGridViewRow selectedRow = Grid_Inventory.Rows[Grid_Inventory.SelectedCells[0].RowIndex];
+                int selectedRowIndex = Grid_Inventory.SelectedCells[0].RowIndex;
+
+                // Pass data to the UpdateForm
+                UpdateForm updateForm = new UpdateForm();
+                updateForm.SetSelectedRowIndex(selectedRowIndex);
+                updateForm.SetInventoryData(LoadInventoryDataFromJson());
+                updateForm.ShowDialog();
+
+                // Optionally, you can reload the data after updating
+                LoadInventoryData();
+            }
+            else
+            {
+                MessageBox.Show("Please select a cell before updating.");
+            }
+
+        }
     }
 
 }

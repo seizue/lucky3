@@ -62,52 +62,67 @@ namespace lucky3
         {
             try
             {
-                // Read existing JSON data from the file if it exists
-                List<DrawData> existingData = new List<DrawData>();
-                if (File.Exists("inventory.json"))
+                if (metroComboBox_ChooseTime.SelectedItem != null) // Ensure an item is selected
                 {
-                    string existingJson = File.ReadAllText("inventory.json");
-                    existingData = JsonConvert.DeserializeObject<List<DrawData>>(existingJson);
+                    // Read existing JSON data from the file if it exists
+                    List<DrawData> existingData = new List<DrawData>();
+                    if (File.Exists("inventory.json"))
+                    {
+                        string existingJson = File.ReadAllText("inventory.json");
+                        existingData = JsonConvert.DeserializeObject<List<DrawData>>(existingJson);
+
+                        // Check if existingData is null
+                        if (existingData == null)
+                        {
+                            existingData = new List<DrawData>(); // Initialize to an empty list
+                        }
+                    }
+
+                    // Create a new instance of DrawData
+                    DrawData data = new DrawData();
+
+                    // Generate ControlNo
+                    data.ControlNo = "CTR_0" + (existingData.Count + 1);
+
+                    // Set other properties based on user input
+                    data.DrawTime = metroComboBox_ChooseTime.SelectedItem.ToString();
+
+                    // Add Straight numbers
+                    data.StraightNumbers.Add(textBox_Straight1.Text);
+                    data.StraightNumbers.Add(textBox_Straight2.Text);
+                    data.StraightNumbers.Add(textBox_Straight3.Text);
+
+                    // Add Rambol numbers
+                    data.RambolNumbers.Add(textBox_Rambol1.Text);
+                    data.RambolNumbers.Add(textBox_Rambol2.Text);
+                    data.RambolNumbers.Add(textBox_Rambol3.Text);
+
+                    // Add the text displayed in button_MonthDate
+                    data.MonthDate = button_MonthDate.Text;
+
+                    // Add the new data to the existing list
+                    existingData.Add(data);
+
+                    // Serialize the updated list to JSON
+                    string json = JsonConvert.SerializeObject(existingData, Formatting.Indented);
+
+                    // Write the JSON to the file
+                    File.WriteAllText("inventory.json", json);
+
+                    MessageBox.Show("Data saved successfully!");
                 }
-
-                // Create a new instance of DrawData
-                DrawData data = new DrawData();
-
-                // Generate ControlNo
-                data.ControlNo = "CTR_0" + (existingData.Count + 1);
-
-                // Set other properties based on user input
-                data.DrawTime = metroComboBox_ChooseTime.SelectedItem.ToString();
-
-                // Add Straight numbers
-                data.StraightNumbers.Add(textBox_Straight1.Text);
-                data.StraightNumbers.Add(textBox_Straight2.Text);
-                data.StraightNumbers.Add(textBox_Straight3.Text);
-
-                // Add Rambol numbers
-                data.RambolNumbers.Add(textBox_Rambol1.Text);
-                data.RambolNumbers.Add(textBox_Rambol2.Text);
-                data.RambolNumbers.Add(textBox_Rambol3.Text);
-
-                // Add the text displayed in button_MonthDate
-                data.MonthDate = button_MonthDate.Text;
-
-                // Add the new data to the existing list
-                existingData.Add(data);
-
-                // Serialize the updated list to JSON
-                string json = JsonConvert.SerializeObject(existingData, Formatting.Indented);
-
-                // Write the JSON to the file
-                File.WriteAllText("inventory.json", json);
-
-                MessageBox.Show("Data saved successfully!");
+                else
+                {
+                    MessageBox.Show("Please select a time before saving data.");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error saving data: " + ex.Message);
             }
         }
+        
+
 
         private void UpdateDateTimeLabel()
         {

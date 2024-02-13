@@ -15,6 +15,8 @@ namespace lucky3
 {
     public partial class UpdateForm : MetroFramework.Forms.MetroForm
     {
+        private List<DrawData> inventoryData;
+        private int selectedRowIndex;
         public UpdateForm()
         {
             InitializeComponent();
@@ -28,9 +30,10 @@ namespace lucky3
             metroComboBox_ChooseTime.SelectedIndex = 0;
         }
 
-        public void SetControlValues(string selectedCellValue, List<string> straightNumbers, List<string> rambolNumbers, string drawTime)
+        // Method to set the values of controls based on the selected cell data
+        public void SetControlValues(List<string> straightNumbers, List<string> rambolNumbers, string drawTime)
         {
-            // Set the values of the controls based on the parameters passed
+            
             metroComboBox_ChooseTime.Text = drawTime;
             textBox_Straight1.Text = straightNumbers[0];
             textBox_Straight2.Text = straightNumbers[1];
@@ -40,67 +43,56 @@ namespace lucky3
             textBox_Rambol3.Text = rambolNumbers[2];
         }
 
+   
+        public void SetInventoryData(List<DrawData> data)
+        {
+            inventoryData = data;
+        }
+
+        public void SetSelectedRowIndex(int index)
+        {
+            selectedRowIndex = index;
+        }
         private void button_Update_Click(object sender, EventArgs e)
         {
-            // Get the updated values from the controls
-            string drawTime = metroComboBox_ChooseTime.Text;
-            List<string> straightNumbers = new List<string>
-            {
-                textBox_Straight1.Text,
-                textBox_Straight2.Text,
-                textBox_Straight3.Text
-            };
-            List<string> rambolNumbers = new List<string>
-            {
-                textBox_Rambol1.Text,
-                textBox_Rambol2.Text,
-                textBox_Rambol3.Text
-            };
-
-            // Update the data in the inventory.json file
             try
             {
-                string filePath = Path.Combine(Application.StartupPath, "inventory.json");
+                // Retrieve data from form controls
+                string drawTime = metroComboBox_ChooseTime.SelectedItem.ToString();
+                List<string> straightNumbers = new List<string> { textBox_Straight1.Text, textBox_Straight2.Text, textBox_Straight3.Text };
+                List<string> rambolNumbers = new List<string> { textBox_Rambol1.Text, textBox_Rambol2.Text, textBox_Rambol3.Text };
 
-                if (File.Exists(filePath))
-                {
-                    // Read the existing JSON data
-                    string json = File.ReadAllText(filePath);
+                // Get the index of the selected row
+                int rowIndex = selectedRowIndex;
 
-                    // Deserialize JSON to a list of DrawData objects
-                    List<DrawData> inventoryData = JsonConvert.DeserializeObject<List<DrawData>>(json);
+                // Find the corresponding DrawData object in the inventoryData list
+                DrawData dataToUpdate = inventoryData[rowIndex];
 
-                    // Find the corresponding DrawData object and update its properties
-                    foreach (DrawData data in inventoryData)
-                    {
-                        if (data.DrawTime == drawTime && data.StraightNumbers.SequenceEqual(straightNumbers) && data.RambolNumbers.SequenceEqual(rambolNumbers))
-                        {
-                            // Update the properties
-                            data.DrawTime = drawTime;
-                            data.StraightNumbers = straightNumbers;
-                            data.RambolNumbers = rambolNumbers;
+                // Update the data
+                dataToUpdate.DrawTime = drawTime;
+                dataToUpdate.StraightNumbers = straightNumbers;
+                dataToUpdate.RambolNumbers = rambolNumbers;
 
-                            break; // Exit the loop after updating
-                        }
-                    }
+                // Update the inventory.json file
+                string json = JsonConvert.SerializeObject(inventoryData, Formatting.Indented);
+                File.WriteAllText("inventory.json", json);
 
-                    // Serialize the updated list to JSON
-                    string updatedJson = JsonConvert.SerializeObject(inventoryData, Formatting.Indented);
+                MessageBox.Show("Data updated successfully.");
 
-                    // Write the updated JSON data back to the file
-                    File.WriteAllText(filePath, updatedJson);
-
-                    MessageBox.Show("Changes saved successfully.");
-                }
+                // Close the form
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error updating data: " + ex.Message);
             }
         }
+
+
     }
+
+
+
+
 }
-    
-
-
 

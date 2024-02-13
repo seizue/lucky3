@@ -40,7 +40,7 @@
             this.RAMBOL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIME_DRAW = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_Update = new System.Windows.Forms.Button();
+            this.button_PassDataInUpdateForm = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.Border = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -151,21 +151,21 @@
             this.DATE.HeaderText = "DATE";
             this.DATE.Name = "DATE";
             // 
-            // button_Update
+            // button_PassDataInUpdateForm
             // 
-            this.button_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(222)))));
-            this.button_Update.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button_Update.FlatAppearance.BorderSize = 0;
-            this.button_Update.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Update.Location = new System.Drawing.Point(437, 2);
-            this.button_Update.Name = "button_Update";
-            this.button_Update.Size = new System.Drawing.Size(68, 26);
-            this.button_Update.TabIndex = 224;
-            this.button_Update.Text = "UPDATE";
-            this.button_Update.UseVisualStyleBackColor = false;
-            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
+            this.button_PassDataInUpdateForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(222)))));
+            this.button_PassDataInUpdateForm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button_PassDataInUpdateForm.FlatAppearance.BorderSize = 0;
+            this.button_PassDataInUpdateForm.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_PassDataInUpdateForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button_PassDataInUpdateForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_PassDataInUpdateForm.Location = new System.Drawing.Point(437, 2);
+            this.button_PassDataInUpdateForm.Name = "button_PassDataInUpdateForm";
+            this.button_PassDataInUpdateForm.Size = new System.Drawing.Size(68, 26);
+            this.button_PassDataInUpdateForm.TabIndex = 224;
+            this.button_PassDataInUpdateForm.Text = "UPDATE";
+            this.button_PassDataInUpdateForm.UseVisualStyleBackColor = false;
+            this.button_PassDataInUpdateForm.Click += new System.EventHandler(this.button_PassDataInUpdateForm_Click);
             // 
             // button_Delete
             // 
@@ -195,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button_Update);
+            this.Controls.Add(this.button_PassDataInUpdateForm);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.Border);
             this.Controls.Add(this.panel2);
@@ -211,7 +211,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroGrid Grid_Inventory;
-        private System.Windows.Forms.Button button_Update;
+        private System.Windows.Forms.Button button_PassDataInUpdateForm;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Panel Border;
         private System.Windows.Forms.DataGridViewTextBoxColumn CONTROL_NO;
