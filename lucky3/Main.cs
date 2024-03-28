@@ -124,7 +124,6 @@ namespace lucky3
         }
         
 
-
         private void UpdateDateTimeLabel()
         {
             // Get the current date and time
@@ -144,6 +143,8 @@ namespace lucky3
 
             userControl_Inventory1.BringToFront();
             userControl_Inventory1.Visible = true;
+
+            userControl_Inventory1.Reload();
         }
 
         private void label_Entries_Click(object sender, EventArgs e)

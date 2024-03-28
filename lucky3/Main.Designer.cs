@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.panel_GridBg = new System.Windows.Forms.Panel();
+            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.button_MonthDate = new System.Windows.Forms.Button();
             this.label_datetime = new System.Windows.Forms.Label();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             this.textBox_Straight1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button_History = new System.Windows.Forms.Button();
             this.button_Plasada = new System.Windows.Forms.Button();
             this.metroPanel15 = new MetroFramework.Controls.MetroPanel();
             this.label_Entries = new System.Windows.Forms.Label();
@@ -59,8 +60,7 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
-            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.userControl_Inventory1 = new lucky3.UserControl_Inventory();
             this.panel_GridBg.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             this.panel_GridBg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_GridBg.BackColor = System.Drawing.Color.White;
+            this.panel_GridBg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panel_GridBg.Controls.Add(this.metroPanel5);
             this.panel_GridBg.Controls.Add(this.button_MonthDate);
             this.panel_GridBg.Controls.Add(this.label_datetime);
@@ -99,6 +99,25 @@
             this.panel_GridBg.Name = "panel_GridBg";
             this.panel_GridBg.Size = new System.Drawing.Size(618, 359);
             this.panel_GridBg.TabIndex = 220;
+            // 
+            // metroPanel5
+            // 
+            this.metroPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.metroPanel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(453, 322);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(95, 1);
+            this.metroPanel5.TabIndex = 258;
+            this.metroPanel5.UseCustomBackColor = true;
+            this.metroPanel5.UseStyleColors = true;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
             // 
             // button_MonthDate
             // 
@@ -129,6 +148,25 @@
             this.label_datetime.TabIndex = 254;
             this.label_datetime.Text = "MONTH / DATE";
             // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.metroPanel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(453, 275);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(95, 1);
+            this.metroPanel4.TabIndex = 253;
+            this.metroPanel4.UseCustomBackColor = true;
+            this.metroPanel4.UseStyleColors = true;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
@@ -151,7 +189,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(400, 11);
+            this.label3.Location = new System.Drawing.Point(402, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 13);
             this.label3.TabIndex = 245;
@@ -163,10 +201,10 @@
             this.metroComboBox_ChooseTime.ForeColor = System.Drawing.Color.White;
             this.metroComboBox_ChooseTime.FormattingEnabled = true;
             this.metroComboBox_ChooseTime.ItemHeight = 23;
-            this.metroComboBox_ChooseTime.Location = new System.Drawing.Point(405, 51);
+            this.metroComboBox_ChooseTime.Location = new System.Drawing.Point(405, 58);
             this.metroComboBox_ChooseTime.Name = "metroComboBox_ChooseTime";
             this.metroComboBox_ChooseTime.Size = new System.Drawing.Size(185, 29);
-            this.metroComboBox_ChooseTime.TabIndex = 244;
+            this.metroComboBox_ChooseTime.TabIndex = 7;
             this.metroComboBox_ChooseTime.UseCustomBackColor = true;
             this.metroComboBox_ChooseTime.UseCustomForeColor = true;
             this.metroComboBox_ChooseTime.UseSelectable = true;
@@ -182,11 +220,11 @@
             this.button_Save.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Save.ForeColor = System.Drawing.Color.MintCream;
             this.button_Save.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Save.Location = new System.Drawing.Point(409, 302);
+            this.button_Save.Location = new System.Drawing.Point(409, 285);
             this.button_Save.Name = "button_Save";
             this.button_Save.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.button_Save.Size = new System.Drawing.Size(181, 29);
-            this.button_Save.TabIndex = 243;
+            this.button_Save.TabIndex = 8;
             this.button_Save.Text = "SAVE";
             this.button_Save.UseVisualStyleBackColor = false;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
@@ -228,7 +266,7 @@
             this.textBox_Rambol3.Name = "textBox_Rambol3";
             this.textBox_Rambol3.ShortcutsEnabled = false;
             this.textBox_Rambol3.Size = new System.Drawing.Size(47, 25);
-            this.textBox_Rambol3.TabIndex = 238;
+            this.textBox_Rambol3.TabIndex = 6;
             this.textBox_Rambol3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Rambol2
@@ -240,7 +278,7 @@
             this.textBox_Rambol2.Multiline = true;
             this.textBox_Rambol2.Name = "textBox_Rambol2";
             this.textBox_Rambol2.Size = new System.Drawing.Size(47, 25);
-            this.textBox_Rambol2.TabIndex = 237;
+            this.textBox_Rambol2.TabIndex = 5;
             this.textBox_Rambol2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Rambol1
@@ -252,7 +290,7 @@
             this.textBox_Rambol1.Multiline = true;
             this.textBox_Rambol1.Name = "textBox_Rambol1";
             this.textBox_Rambol1.Size = new System.Drawing.Size(47, 25);
-            this.textBox_Rambol1.TabIndex = 236;
+            this.textBox_Rambol1.TabIndex = 4;
             this.textBox_Rambol1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
@@ -288,7 +326,7 @@
             this.EnterNewItem_label.BackColor = System.Drawing.Color.Transparent;
             this.EnterNewItem_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnterNewItem_label.ForeColor = System.Drawing.Color.DimGray;
-            this.EnterNewItem_label.Location = new System.Drawing.Point(37, 12);
+            this.EnterNewItem_label.Location = new System.Drawing.Point(37, 22);
             this.EnterNewItem_label.Name = "EnterNewItem_label";
             this.EnterNewItem_label.Size = new System.Drawing.Size(135, 13);
             this.EnterNewItem_label.TabIndex = 227;
@@ -303,7 +341,7 @@
             this.textBox_Straight3.Multiline = true;
             this.textBox_Straight3.Name = "textBox_Straight3";
             this.textBox_Straight3.Size = new System.Drawing.Size(47, 25);
-            this.textBox_Straight3.TabIndex = 223;
+            this.textBox_Straight3.TabIndex = 3;
             this.textBox_Straight3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Straight2
@@ -315,7 +353,7 @@
             this.textBox_Straight2.Multiline = true;
             this.textBox_Straight2.Name = "textBox_Straight2";
             this.textBox_Straight2.Size = new System.Drawing.Size(47, 25);
-            this.textBox_Straight2.TabIndex = 222;
+            this.textBox_Straight2.TabIndex = 2;
             this.textBox_Straight2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_Straight1
@@ -327,7 +365,7 @@
             this.textBox_Straight1.Multiline = true;
             this.textBox_Straight1.Name = "textBox_Straight1";
             this.textBox_Straight1.Size = new System.Drawing.Size(47, 25);
-            this.textBox_Straight1.TabIndex = 221;
+            this.textBox_Straight1.TabIndex = 1;
             this.textBox_Straight1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button2
@@ -356,26 +394,6 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 14);
             this.label4.TabIndex = 222;
-            // 
-            // button_History
-            // 
-            this.button_History.BackColor = System.Drawing.Color.Transparent;
-            this.button_History.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_History.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button_History.FlatAppearance.BorderSize = 0;
-            this.button_History.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_History.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_History.ForeColor = System.Drawing.Color.Black;
-            this.button_History.Image = global::lucky3.Properties.Resources.order_history_24px;
-            this.button_History.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_History.Location = new System.Drawing.Point(141, 26);
-            this.button_History.Name = "button_History";
-            this.button_History.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button_History.Size = new System.Drawing.Size(83, 29);
-            this.button_History.TabIndex = 225;
-            this.button_History.Text = "HISTORY";
-            this.button_History.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_History.UseVisualStyleBackColor = false;
             // 
             // button_Plasada
             // 
@@ -406,7 +424,7 @@
             this.metroPanel15.HorizontalScrollbarSize = 10;
             this.metroPanel15.Location = new System.Drawing.Point(130, 26);
             this.metroPanel15.Name = "metroPanel15";
-            this.metroPanel15.Size = new System.Drawing.Size(2, 29);
+            this.metroPanel15.Size = new System.Drawing.Size(1, 29);
             this.metroPanel15.TabIndex = 226;
             this.metroPanel15.UseCustomBackColor = true;
             this.metroPanel15.UseStyleColors = true;
@@ -489,50 +507,29 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // metroPanel4
+            // metroPanel6
             // 
-            this.metroPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.metroPanel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel4.HorizontalScrollbarBarColor = true;
-            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(453, 285);
-            this.metroPanel4.Name = "metroPanel4";
-            this.metroPanel4.Size = new System.Drawing.Size(95, 1);
-            this.metroPanel4.TabIndex = 253;
-            this.metroPanel4.UseCustomBackColor = true;
-            this.metroPanel4.UseStyleColors = true;
-            this.metroPanel4.VerticalScrollbarBarColor = true;
-            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel4.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel5
-            // 
-            this.metroPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.metroPanel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.metroPanel5.HorizontalScrollbarBarColor = true;
-            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel5.HorizontalScrollbarSize = 10;
-            this.metroPanel5.Location = new System.Drawing.Point(453, 348);
-            this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(95, 1);
-            this.metroPanel5.TabIndex = 258;
-            this.metroPanel5.UseCustomBackColor = true;
-            this.metroPanel5.UseStyleColors = true;
-            this.metroPanel5.VerticalScrollbarBarColor = true;
-            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel5.VerticalScrollbarSize = 10;
+            this.metroPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.metroPanel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.metroPanel6.HorizontalScrollbarBarColor = true;
+            this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.HorizontalScrollbarSize = 10;
+            this.metroPanel6.Location = new System.Drawing.Point(31, 26);
+            this.metroPanel6.Name = "metroPanel6";
+            this.metroPanel6.Size = new System.Drawing.Size(1, 29);
+            this.metroPanel6.TabIndex = 233;
+            this.metroPanel6.UseCustomBackColor = true;
+            this.metroPanel6.UseStyleColors = true;
+            this.metroPanel6.VerticalScrollbarBarColor = true;
+            this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel6.VerticalScrollbarSize = 10;
             // 
             // userControl_Inventory1
             // 
             this.userControl_Inventory1.BackColor = System.Drawing.Color.White;
             this.userControl_Inventory1.Location = new System.Drawing.Point(-3, 0);
             this.userControl_Inventory1.Name = "userControl_Inventory1";
-            this.userControl_Inventory1.Size = new System.Drawing.Size(621, 359);
+            this.userControl_Inventory1.Size = new System.Drawing.Size(621, 368);
             this.userControl_Inventory1.TabIndex = 233;
             this.userControl_Inventory1.Visible = false;
             // 
@@ -541,13 +538,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 513);
+            this.Controls.Add(this.metroPanel6);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.label_Inventory);
             this.Controls.Add(this.label_Entries);
             this.Controls.Add(this.metroPanel15);
-            this.Controls.Add(this.button_History);
             this.Controls.Add(this.button_Plasada);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel_GridBg);
@@ -585,7 +582,6 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button_Plasada;
-        private System.Windows.Forms.Button button_History;
         private MetroFramework.Controls.MetroPanel metroPanel15;
         private System.Windows.Forms.Label label_Entries;
         private System.Windows.Forms.Label label_Inventory;
@@ -598,6 +594,7 @@
         private System.Windows.Forms.Button button2;
         private MetroFramework.Controls.MetroPanel metroPanel5;
         private MetroFramework.Controls.MetroPanel metroPanel4;
+        private MetroFramework.Controls.MetroPanel metroPanel6;
     }
 }
 

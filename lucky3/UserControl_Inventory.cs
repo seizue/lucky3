@@ -18,6 +18,14 @@ namespace lucky3
         public UserControl_Inventory()
         {
             InitializeComponent();
+            Reload();
+        }
+
+        // Define the inventoryData list at the class level
+        private List<DrawData> inventoryData = new List<DrawData>();
+
+        public void Reload()
+        {
             LoadInventoryData();
 
             if (Grid_Inventory != null)
@@ -28,44 +36,33 @@ namespace lucky3
 
         public void LoadInventoryData()
         {
-            try
+            string filePath = Path.Combine(Application.StartupPath, "inventory.json");
+
+            if (File.Exists(filePath))
             {
-                string filePath = Path.Combine(Application.StartupPath, "inventory.json");
+                // Read the JSON file
+                string json = File.ReadAllText(filePath);
 
-                if (File.Exists(filePath))
+                // Deserialize JSON to a list of DrawData objects
+                List<DrawData> inventoryData = JsonConvert.DeserializeObject<List<DrawData>>(json);
+
+                // Clear existing rows in the DataGridView
+                Grid_Inventory.Rows.Clear();
+
+                // Populate the DataGridView with inventory data
+                foreach (var item in inventoryData)
                 {
-                    // Read the JSON file
-                    string json = File.ReadAllText(filePath);
-
-                    // Deserialize JSON to a list of DrawData objects
-                    List<DrawData> inventoryData = JsonConvert.DeserializeObject<List<DrawData>>(json);
-
-                    // Clear existing rows in the DataGridView
-                    Grid_Inventory.Rows.Clear();
-
-                    // Populate the DataGridView with inventory data
-                    foreach (var item in inventoryData)
-                    {
-                        // Add a row to the DataGridView
-                        Grid_Inventory.Rows.Add(
-                            item.ControlNo, // CONTROL_NO
-                            string.Join(", ", item.StraightNumbers), // STRAIGHT
-                            string.Join(", ", item.RambolNumbers), // RAMBOL
-                            item.DrawTime, // TIME_DRAW
-                            item.MonthDate // DATE
-                        );
-                    }
-                }
-                else
-                {
-                    // Optionally, handle the case where the inventory.json file does not exist
-                    MessageBox.Show("The inventory.json file does not exist.");
+                    // Add a row to the DataGridView
+                    Grid_Inventory.Rows.Add(
+                        item.ControlNo, // CONTROL_NO
+                        string.Join(", ", item.StraightNumbers), // STRAIGHT
+                        string.Join(", ", item.RambolNumbers), // RAMBOL
+                        item.DrawTime, // TIME_DRAW
+                        item.MonthDate // DATE
+                    );
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading inventory data: " + ex.Message);
-            }
+
         }
 
 
@@ -175,7 +172,61 @@ namespace lucky3
                 MessageBox.Show("Please select a cell before updating.");
             }
         }
+
+        private void button_Search_Click(object sender, EventArgs e)
+        {
+            DateTime selectedDate = dateTimePicker1.Value.Date;
+
+            // Commit any pending edits to prevent Uncommitted new row cannot be made invisible exception
+            Grid_Inventory.EndEdit();
+
+            // Filter the DataGridView based on the selected date
+            var filteredRows = Grid_Inventory.Rows
+                .Cast<DataGridViewRow>()
+                .Where(row => row.Cells["DATE"].Value != null &&
+                              Convert.ToDateTime(row.Cells["DATE"].Value).Date == selectedDate)
+                .ToList();
+
+            if (filteredRows.Any())
+            {
+                // Hide all rows except the header row
+                foreach (DataGridViewRow row in Grid_Inventory.Rows)
+                {
+                    if (!row.IsNewRow) // Check if it's not a new row
+                    {
+                        row.Visible = false;
+                    }
+                }
+
+                // Show only the filtered rows
+                foreach (var row in filteredRows)
+                {
+                    row.Visible = true;
+                    row.Selected = true; // Optionally select the row
+                }
+
+                // Scroll to the first selected row
+                Grid_Inventory.FirstDisplayedScrollingRowIndex = filteredRows.First().Index;
+            }
+            else
+            {
+                MessageBox.Show("No matching records found for the selected date.");
+            }
+        }
+
+        private void button_ClearSearch_Click(object sender, EventArgs e)
+        {
+            // Show all rows
+            foreach (DataGridViewRow row in Grid_Inventory.Rows)
+            {
+                row.Visible = true;
+            }
+
+            // Clear any selections
+            Grid_Inventory.ClearSelection();
+        }
     }
+
 
 }
 
